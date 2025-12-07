@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "argpca"
+version = "0.1.0"
+description = "Adaptive Reference-Guided PCA for high-dimension low-sample size data"
+authors = [
+    {name="Dongsun Yoon", email="dsyoon@umich.edu"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+
+dependencies = [
+    "numpy>=1.20"
+]
+
+[project.urls]
+Homepage = "https://github.com/dsyoonstat/argpca"
+
+[tool.setuptools.packages.find]
+where = ["src"]

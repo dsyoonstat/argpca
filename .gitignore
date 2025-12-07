@@ -1,0 +1,58 @@
+# -----------------------------
+# Python virtual environments
+# -----------------------------
+.venv/
+venv/
+env/
+
+# -----------------------------
+# Python cache / temp files
+# -----------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.pickle
+
+# pytest cache
+.pytest_cache/
+
+# -----------------------------
+# Build artifacts (for packaging)
+# -----------------------------
+build/
+dist/
+*.egg-info/
+*.egg
+
+# -----------------------------
+# Jupyter / IPython (if added later)
+# -----------------------------
+.ipynb_checkpoints/
+
+# -----------------------------
+# OS-specific files
+# -----------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# Logs / temp / backup files
+# -----------------------------
+*.log
+*.tmp
+*.bak
+
+# -----------------------------
+# IDE / Editor directories
+# -----------------------------
+.vscode/
+.idea/
+
+# -----------------------------
+# Coverage
+# -----------------------------
+.coverage
+htmlcov/
+coverage.xml
