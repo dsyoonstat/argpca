@@ -1,17 +1,8 @@
 # argpca: Adaptive Reference-Guided PCA for High-Dimension, Low-Sample Size Data
 
 `argpca` is a Python implementation of **Adaptive Reference-Guided PCA (ARG-PCA)**,  
-a method designed for **high-dimension, low-sample-size (HDLSS)** data proposed in  
+a method designed for **high-dimension, low-sample-size (HDLSS)** data when **prior  information** about the true PC subspace is available, proposed in 
 *[Yoon and Jung (2025)](<https://onlinelibrary.wiley.com/doi/full/10.1002/sta4.70081>)*.  
-The method provides **improved asymptotic accuracy** for estimating the principal  
-component (PC) subspace when informative **reference vectors** are available.
-
-This package implements the full ARG estimator and its PCA counterpart, including:
-
-- Efficient **Gram-matrix PCA** for HDLSS settings (p ≫ n)
-- Computation of the **ARG PC subspace** (function API)
-- A full **ARGPCA estimator** (scikit-learn–style)
-- Tools for **benchmarking**, **simulations**, and **real-data analysis** (NASDAQ example)
 
 ---
 
@@ -19,8 +10,8 @@ This package implements the full ARG estimator and its PCA counterpart, includin
 
 Classical PCA performs poorly in HDLSS settings: the sample PC subspace is **inconsistent**,  
 and the principal angles between the sample and true PC subspaces converge to a *non-zero*  
-random limit. When **prior information** is available—such as domain-specific directions  
-known (or believed) to be aligned with the true PC subspace—ARG-PCA leverages this to  
+random limit. When **prior information** is available---such as domain-specific directions  
+known (or believed) to be aligned with the true PC subspace---ARG-PCA leverages this to  
 improve estimation accuracy. A representative example is the normalized vector of ones,  
 often used in financial applications to reflect the common market factor,  
 as in the capital asset pricing model. The ARG PC subspace estimator asymptotically  
@@ -33,8 +24,7 @@ outperforms the naive PCA based estimator. ARG-PCA is built based on ARG PC subs
 - **ARG PC subspace estimator** (`compute_arg_pc_subspace`)
 - **ARG-PCA** (`ARGPCA`) with a scikit-learn–compatible API  
 - **Fast PCA for HDLSS settings** via Gram-matrix eigen-decomposition  
-- **Simulation and real-data examples** reproducing the empirical results in  
-  *[Yoon and Jung (2025)](<https://onlinelibrary.wiley.com/doi/full/10.1002/sta4.70081>)*
+- **Simulation and real-data examples** reproducing the empirical results in *[Yoon and Jung (2025)](<https://onlinelibrary.wiley.com/doi/full/10.1002/sta4.70081>)*
 
 ---
 
@@ -52,7 +42,7 @@ pip install -e .
 
 ## Quick Start
 
-### ARG-PCA Estimator
+### ARG-PCA
 
 ```python
 import numpy as np
@@ -70,7 +60,7 @@ scores     = model.transform(X)     # (n, 2)
 components = model.components_      # (2, p)
 ```
 
-### Direct subspace extraction
+### ARG PC subspace estimator
 
 ```python
 from argpca.pca import compute_arg_pc_subspace
@@ -123,8 +113,7 @@ argpca/
 
 ## Running the Simulations
 
-To reproduce the numerical experiments from 
-*[Yoon and Jung (2025)](<https://onlinelibrary.wiley.com/doi/full/10.1002/sta4.70081>)*, run: 
+To reproduce the simulation results from of the paper, run:
 
 ```bash
 python examples/simulation/simulation.py
@@ -139,6 +128,8 @@ examples/simulation/results/
 ---
 
 ## Real Data Example (NASDAQ 2024-12)
+
+To reproduce the real data analysis results of the paper, run:
 
 ```bash
 python examples/realdata/realdata.py
