@@ -1,8 +1,8 @@
-# argpca: Adaptive Reference-Guided PCA for High-Dimensional Data
+# argpca: Adaptive Reference-Guided PCA for High-Dimension, Low-Sample Size Data
 
 `argpca` is a Python implementation of **Adaptive Reference-Guided PCA (ARG-PCA)**,  
 a method designed for **high-dimension, low-sample-size (HDLSS)** data proposed in  
-**Yoon and Jung (2025)** (<https://onlinelibrary.wiley.com/doi/full/10.1002/sta4.70081>).  
+*[Yoon and Jung (2025)](<https://onlinelibrary.wiley.com/doi/full/10.1002/sta4.70081>)*.  
 The method provides **improved asymptotic accuracy** for estimating the principal  
 component (PC) subspace when informative **reference vectors** are available.
 
@@ -21,8 +21,10 @@ Classical PCA performs poorly in HDLSS settings: the sample PC subspace is **inc
 and the principal angles between the sample and true PC subspaces converge to a *non-zero*  
 random limit. When **prior information** is available—such as domain-specific directions  
 known (or believed) to be aligned with the true PC subspace—ARG-PCA leverages this to  
-improve estimation accuracy. A representative example is the normalized vector of ones, 
-often used in financial applications to reflect the common market factor, as in the capital asset pricing model.
+improve estimation accuracy. A representative example is the normalized vector of ones,  
+often used in financial applications to reflect the common market factor,  
+as in the capital asset pricing model. The ARG PC subspace estimator asymptotically  
+outperforms the naive PCA based estimator. ARG-PCA is built based on ARG PC subspace estimator.
 
 ---
 
@@ -32,7 +34,7 @@ often used in financial applications to reflect the common market factor, as in 
 - **ARG-PCA** (`ARGPCA`) with a scikit-learn–compatible API  
 - **Fast PCA for HDLSS settings** via Gram-matrix eigen-decomposition  
 - **Simulation and real-data examples** reproducing the empirical results in  
-  *Yoon and Jung (2025)* (<https://onlinelibrary.wiley.com/doi/full/10.1002/sta4.70081>) 
+  *[Yoon and Jung (2025)](<https://onlinelibrary.wiley.com/doi/full/10.1002/sta4.70081>)*
 
 ---
 
@@ -122,7 +124,7 @@ argpca/
 ## Running the Simulations
 
 To reproduce the numerical experiments from 
-*Yoon and Jung (2025)* (<https://onlinelibrary.wiley.com/doi/full/10.1002/sta4.70081>), run: 
+*[Yoon and Jung (2025)](<https://onlinelibrary.wiley.com/doi/full/10.1002/sta4.70081>)*, run: 
 
 ```bash
 python examples/simulation/simulation.py
@@ -168,7 +170,7 @@ This project is released under the **MIT License**.
 If you use this package in academic work, please cite:
 
 ```bibtex
-@article{argpca2025,
+@article{Yoon2025,
   author    = {Yoon, Dongsun and Jung, Sungkyu},
   title     = {Adaptive Reference-Guided Estimation of Principal Component Subspace in High Dimensions},
   journal   = {Stat},
