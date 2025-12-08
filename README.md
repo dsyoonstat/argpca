@@ -35,7 +35,7 @@ Clone the repository and install in editable mode:
 ```bash
 git clone https://github.com/dsyoonstat/argpca.git
 cd argpca
-pip install -e .
+pip install -e ".[examples]"
 ```
 
 ---
