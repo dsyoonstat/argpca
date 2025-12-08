@@ -30,12 +30,12 @@ outperforms the naive PCA based estimator. ARG-PCA is built based on ARG PC subs
 
 ## Installation
 
-Clone the repository and install in editable mode:
+Clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/dsyoonstat/argpca.git
 cd argpca
-pip install -e ".[examples]"
+pip install ".[examples]"
 ```
 
 ---
